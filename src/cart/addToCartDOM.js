@@ -7,12 +7,12 @@ const addToCartDOM = ({id, name, price, image, amount}) => {
     article.setAttribute('data-id', id)
     let CartItem = `
     <img src="${image}" class="cart-item-img" alt="" />
-            <div class="">
+            <div>
               <h4 class="cart-item-name">${name}</h4>
               <p class="cart-item-price">${formatPrice(price)}</p>
               <button class="cart-item-remove-btn" data-id="${id}">remove</button>
             </div>
-            <div class="">
+            <div>
               <button class="cart-item-increase-btn" data-id="${id}">
                 <i class="fas fa-chevron-up"></i>
               </button>

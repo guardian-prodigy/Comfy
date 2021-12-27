@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     if (response.status >= 200 && response.status <= 299) {
       let data = await response.json();
       const {
-        fields: { name, price, image: img, description, company, colors, id },
+        fields: { name, price, image: img, description, company, colors}, id
       } = data;
       productID = id;
       let clr = colors
@@ -29,6 +29,7 @@ window.addEventListener("DOMContentLoaded", async () => {
         })
         .join("");
       let Image = img[0].thumbnails.large.url;
+      console.log(Image);
       let product = `
       <img
           src="${Image}"
@@ -52,6 +53,7 @@ window.addEventListener("DOMContentLoaded", async () => {
       centerDOM.innerHTML = product;
       const cartBtn = getElement(".addToCartBtn");
       cartBtn.addEventListener('click', () => {
+        console.log(productID);
           addToCart(productID)
       })
     } else {
